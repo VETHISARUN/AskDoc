@@ -4,19 +4,25 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+
 android {
     namespace = "com.example.askdoc"
     compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.askdoc"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    kotlinOptions {
+        freeCompilerArgs += "-Xbreak-continue-in-when"
+    }
+
+
 
     buildTypes {
         release {
@@ -37,10 +43,14 @@ android {
     buildFeatures {
         compose = true
     }
+
 }
 
 dependencies {
-
+    implementation(libs.lucene.core)
+    implementation(libs.lucene.analyzers.common)
+    implementation(libs.lucene.queryparser)
+    implementation ("com.microsoft.onnxruntime:onnxruntime:1.17.0")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

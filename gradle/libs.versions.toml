@@ -10,6 +10,9 @@ activityCompose = "1.10.1"
 composeBom = "2024.04.01"
 
 [libraries]
+lucene-core = { module = "org.apache.lucene:lucene-core", version = "8.11.1" }
+lucene-analyzers-common = { module = "org.apache.lucene:lucene-analyzers-common", version = "8.11.1" }
+lucene-queryparser = { module = "org.apache.lucene:lucene-queryparser", version = "8.11.1" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
